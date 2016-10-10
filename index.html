@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Hot Tamale</title>
+<link rel="stylesheet" href="lib/codemirror.css">
+<link rel="stylesheet" href="mbo.css">
+<link rel="stylesheet" href="text.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<script src="lib/codemirror.js"></script>
+<script src="https://code.jquery.com/jquery-3.1.0.min.js"   integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s="   crossorigin="anonymous"></script>
+</head>
+<body>
+
+<ul class="nav">
+  <li class="navli"><a class="active" href="#home">Home</a></li>
+  <li class="navli"><a href="#news">Get Started</a></li>
+  <li class="navli"><a href="#contact">Contact</a></li>
+  <li class="navli"><a href="#about">About</a></li>
+</ul>
+
+<div class="container-fluid">
+	<h1>Welcome to HoT taMaLe</h1>
+	<h3>The fastest way to learn HTML and other cutting edge web technologies.</h3> 
+</div>
+<div class="container-fluid red">
+	<p class="half">Hot Tamale teaches students how to code by exposing them to numerous examples of proper code. Rather than stare at a single page of code for minutes on end, students will be forced to quickly jump between blocks of code, honing the speed at which they are able to interpret and understand the code before their eyes.</p>
+</div>
+<div class="container html1">
+	<div class="question">
+		<p><strong>This &lt;body&gt; tag signifies what?</strong><br>
+		<button onclick="wrong()">A</button> Main content of page <br>
+		<button onclick="right()">B</button> Start of actual page content <br>
+		<button onclick="wrong()">C</button> Middle of page here <br>
+		<span id="answer" style="visibility: collapse">A body tag indicates the start of content that is actually displayed</span></p>
+	</div>
+</div>
+
+<div class="container-fluid red">
+	<ul class="half list">
+		<li>Run through our thousands of code files with tens of thousands of questions</li>
+		<li>Start with the simplest of "Hello World" pages and graduate onto advanced snippets that could fool even expert coders</li>
+		<li>Earn points for the questions you answer correctly, and create a free account to save your progress</li>
+		<li>Go Pro to unlock advanced features, including editing text to solve problems</li>
+	</ul>
+</div>
+
+</body>
+
+<script type="text/javascript">
+
+function wrong() {
+	document.getElementById("answer").style.color = "red";
+	document.getElementById("answer").style.visibility= "visible";
+}
+
+function right() {
+	document.getElementById("answer").style.color = "green";
+	document.getElementById("answer").style.visibility = "visible";
+}
+
+var myHTMLCode = CodeMirror($('.html1').get(0), {
+  value: "<!DOCTYPE html>\n<html>\n <head>\n <title>Page Title</title>\n </head>\n<body>\n<h1>This is a Heading</h1>\n <p>This is a paragraph.</p>\n </body>\n </html>",
+  lineNumbers: true,
+  mode:  "html",
+  theme: "mbo"
+});
+
+myHTMLCode.addLineClass(5, 'background', 'highlight');
+
+</script>
+</html>
