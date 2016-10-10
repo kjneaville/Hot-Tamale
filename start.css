@@ -1,0 +1,64 @@
+.nav {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+.navli {
+    float: left;
+}
+
+.navli a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.navli a:hover {
+    background-color: #111;
+}
+.container-fluid {
+	text-align: center;
+}
+.red {
+	background-color: rgb(139, 0, 0);
+	color: white;
+	padding: 20px;
+	margin-top: 20px;
+}
+
+.half {
+	width: 50%;
+	margin-left: 25%;
+	margin-right: 25%;
+}
+
+.question {
+	position: absolute;
+	right: 0;
+	/*top: 5%;
+	left: 60%;*/
+	width: 260px;
+	padding: 10px;
+	z-index: 20;
+	border: 5px solid rgb(139, 0, 0);
+	background-color: white;
+}
+
+.highlight {
+	background-color: rgb(70, 0, 0);
+}
+
+.html2 {
+	margin-top: 20px;
+}
+
+.list {
+	text-align: left;
+	list-style-type:square;
+	background-color: rgb(139, 0, 0);
+}

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Hot Tamale</title>
+<link rel="stylesheet" href="lib/codemirror.css">
+<link rel="stylesheet" href="mbo.css">
+<link rel="stylesheet" href="start.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<script src="lib/codemirror.js"></script>
+<script src="https://code.jquery.com/jquery-3.1.0.min.js"   integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s="   crossorigin="anonymous"></script>
+</head>
+<body>
+
+<ul class="nav">
+  <li class="navli"><a href="#home">Home</a></li>
+  <li class="navli"><a class="active" href="start.html">Get Started</a></li>
+  <li class="navli"><a href="#contact">Contact</a></li>
+  <li class="navli"><a href="#about">About</a></li>
+</ul>
+
+<div class="container html2">
+	<div class="question">
+		<p><strong>This &lt;body&gt; tag signifies what?</strong><br>
+		<button onclick="wrong()">A</button> Main content of page <br>
+		<button onclick="right()">B</button> Start of actual page content <br>
+		<button onclick="wrong()">C</button> Middle of page here <br>
+		<span id="answer" style="visibility: collapse">A body tag indicates the start of content that is actually displayed</span></p>
+	</div>
+</div>
+
+</body>
+
+<script type="text/javascript">
+
+function wrong() {
+	document.getElementById("answer").style.color = "red";
+	document.getElementById("answer").style.visibility= "visible";
+}
+
+function right() {
+	document.getElementById("answer").style.color = "green";
+	document.getElementById("answer").style.visibility = "visible";
+}
+
+var myHTMLCode = CodeMirror($('.html2').get(0), {
+  value: readTextFile(""),
+  lineNumbers: true,
+  mode:  "html",
+  theme: "mbo"
+});
+
+myHTMLCode.addLineClass(5, 'background', 'highlight');
+
+</script>
+</html>
